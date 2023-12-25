@@ -1,0 +1,35 @@
+INTENT: An intent is a message that one component uses to interact or request data / Functionality from different other components in android.
+
+Types of Intents
+-> Explicit : Here we do know the target activity or component.
+-> Implicit : Here the android system shows different options to user for using whatever app they would like to request or receive the data from.
+
+Explicit intent example:
+
+Intent i = new Intent (context, target component);
+this.startActivity(i);
+
+
+
+IMPLICIT INTENTS specify the action that is to be performed by the Android System.
+When we provide some information regarding the operation Android System searches the components that are specific to perform the given tasks.
+Now let’s suppose you want to set a reminder for some event and you have only one app that can perform this task then Android System will open this app directly but if your device has more than one task to perform this action than Android Will show you a selection dialogue of these options to start.
+
+
+Implicit intent Example
+
+Intent impl = new Intent(String action, URI uri);
+Intent impl = new Intent(String action);
+this.startActivity(i);
+
+Major advantages of using INTENT in android
+
+1. Starting a new activity or fragment from the existing one
+2. Starting a service
+3. Delivering a broadcast receiver.
+
+
+Simple example to transfer data between activities: https://medium.com/androiddevlopers/introduction-to-android-app-components-activities-and-intents-part-i-828da426be3d
+
+
+

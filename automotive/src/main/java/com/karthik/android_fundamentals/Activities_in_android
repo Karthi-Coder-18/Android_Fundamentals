@@ -1,0 +1,70 @@
+-> Android developer docs for Activity: https://developer.android.com/guide/components/activities/activity-lifecycle#java
+
+-> Android system initiates Activity by using call back methods.
+
+-> Typically, one activity in the app is called the main activity. This is the activity is the first screen that the user sees firstly when a user opens the app.
+
+-> Activity in android extends AppCompatActivity -> FragmentActivity -> androidx.core.app.ComponentActivity -> Activity class.
+
+-> Configure activity in manifest file or else your app will not be able to recognize the activity
+
+<activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+</activity>
+
+
+
+LIFECYCLE OF ACTIVITY IN ANDROID
+
+-> Now there must be something that will remind the activity that the current state of the activity has changed. This will tell that is the system is creating, destroying, resuming or stopping the activity.
+
+-> Why these call — back methods are so important? This is because, if you do not handle all above-mentioned situations while creating an app will cause crashing of the application or security issues.
+
+
+Example:
+
+Suppose you made an android video game, whenever user switches between app then you must terminate the network and pause the video.
+And when the user returns to your game you will start the video and reconnect the network and allow the user to continue his / her game.
+
+
+onCreate(): This invokes when the system creates your activity. You must use setContentView(your layout file) inside this method. After onCreate there is always on OnStart ()
+onStart(): Activity enters to this method when it entered in a started state after oCreate method.
+onResume(): The system invokes this call-back just before the activity starts interacting with the user.
+onPause(): The system calls onPause() when the activity loses focus and enters a Paused state.
+onStop(): The system calls onStop() when the activity is no longer visible to the user.
+onRestart(): The system invokes this call-back when an activity in the Stopped state is about to restart. onRestart() restores the state of the activity from the time that it was stopped.
+onDestroy(): The system invokes this call-back before an activity is destroyed.
+
+
+Questions
+
+1. What is Bundle object?
+2. What is @OnLifecycleEvent() ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
