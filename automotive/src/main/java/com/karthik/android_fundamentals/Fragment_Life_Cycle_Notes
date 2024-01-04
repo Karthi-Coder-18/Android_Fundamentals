@@ -1,0 +1,83 @@
+-> Fragment manager is responsible for managing the lifecycle states of a fragment. And every fragment must be attached to Fragment manager.
+
+-> FragmentManager is also responsible for attaching fragments to their host activity and detaching them when the fragment is no longer in use. The Fragment class has two callback methods, onAttach() and onDetach(), that you can override to perform work when either of these events occur.
+
+-> The onAttach() callback is invoked when the fragment has been added to a FragmentManager and is attached to its host activity.
+At this point, the fragment is active, and the FragmentManager is managing its lifecycle state. At this point, FragmentManager methods such as findFragmentById() return this fragment.
+
+-> onAttach() callback is always called before the lifecycle state of a fragment.
+
+-> The onDetach() callback is invoked when the fragment has been removed from a FragmentManager and is detached from its host activity. The fragment is no longer active and can no longer be retrieved using findFragmentById()
+
+-> onDetach() is always called after any Lifecycle state changes.
+
+Note: A fragment's lifecycle state can never be greater than its parent. For example, a parent fragment or activity must be started before its child fragments. Likewise, child fragments must be stopped before their parent fragment or activity.
+
+
+FRAGMENT LIFECYCLE METHODS [https://medium.com/@w.fauzia009/activity-vs-fragment-lifecycle-6de1935a0432]
+
+-> Fragments are part of an activity also known as sub-activity. There can be multiple fragments attached to a single activity.
+
+-> Each fragment has its own life cycle methods that is affected by activity life cycle because fragments are embedded in activity.
+
+-> The FragmentManager class is responsible to make interaction between fragment objects.
+
+
+
+1. onAttach(Activity) -> This call back is called when the fragment gets attached to the activity.
+
+2. onCreate(Bundle) -> This call back is called for the initial creation of the fragment.
+
+3. onCreateView() -> Android system calls this callback method when it's time to show the UI on the device screen.
+
+4. onViewCreated() -> Let's the android system know that the fragment view has been created.
+
+5. onActivityCreated() -> This callback will let the fragment know that the activity for which the fragment is attached has completed it's own onCreate() method.
+
+6. onViewStateRestored() ->
+
+7. onStart() -> This callback gets called when the fragment appears on the UI screen.
+
+8. onResume() -> This callback gets called when the fragment is ready to get interacted with the user.
+
+9. onPause() -> The system calls this callback as the first indication that the user is leaving the fragment. This is usually where you should commit any changes that should be persisted beyond the current user session.
+
+10. onStop() -> when user is not interacting with the fragment and it is going to be destroyed then this callback method gets called.
+
+11. onDestroyView() -> It’s called before onDestroy(). This is the counterpart to onCreateView() where we set up the UI. If there are things that need to be cleaned up specific to the UI, then that logic can be put up in onDestroyView().
+
+12. onDestroy() -> onDestroy() called to do final clean up of the fragment’s state but Not guaranteed to be called by the Android platform.
+
+13. onDetach() -> It’s called after onDestroy(), to notify that the fragment has been disassociated from its hosting activity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

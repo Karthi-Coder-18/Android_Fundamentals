@@ -87,6 +87,7 @@ protected void onStart(){
 }
 Our application does not stay in this callback method for long.
 
+
 3. onResume():
 
 Similar to previous methods this method is invoked when activity enters in the resumed state. Typically This is called when the user starts interacting with the application.
@@ -102,6 +103,9 @@ It is invoked when the activity starts interacting with the user. At this point,
 protected void onResume(){
      Toast toast = Toast.makeText(getApplicationContext(),"onResume                 Called",Toast.LENGTH_LONG).show();
 }
+
+
+
 4. onPause():
 
 This method is invoked when the activity is running in the background but not killed completely yet. Typically it is counter to onResume().
@@ -115,6 +119,8 @@ Remember you must use onStop() if you want to kill that activity completely.
 protected void onPause(){
      Toast toast = Toast.makeText(getApplicationContext(),"onPause                 Called",Toast.LENGTH_LONG).show();
 }
+
+
 5. onStop():
 
 This method is invoked when your app enters in a stopped state.
@@ -126,6 +132,8 @@ From the Stopped state, the activity either comes back to interact with the user
 protected void onStop(){
        Toast toast = Toast.makeText(getApplicationContext(),"onStop                 Called",Toast.LENGTH_LONG).show();
 }
+
+
 6. onDestroy():
 
 The final call received before the activity is destroyed. This can happen
@@ -139,6 +147,8 @@ To distinguish between these scenarios, check it with isFinishing() method.
 protected void onDestroy(){
      Toast toast = Toast.makeText(getApplicationContext(),"onDestroy                 Called",Toast.LENGTH_LONG).show();
 }
+
+
 7. onRestart():
 
 It is invoked after the activity has been stopped and prior to its starting stage.
